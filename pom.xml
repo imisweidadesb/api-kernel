@@ -6,7 +6,18 @@
 
     <groupId>com.zj.api</groupId>
     <artifactId>api-kernel</artifactId>
+    <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
+    <modules>
+        <module>webapp</module>
+        <module>kernel-biz-dao</module>
+        <module>kernel-biz-service</module>
+        <module>kernel-biz-daemon</module>
+        <module>kernel-core-facade</module>
+        <module>kernel-core-service</module>
+        <module>kernel-biz-cache</module>
+        <module>kernel-biz-util</module>
+    </modules>
 
 
 </project>

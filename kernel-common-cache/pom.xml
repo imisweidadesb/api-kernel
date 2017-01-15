@@ -9,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>kernel-biz-cache</artifactId>
+    <artifactId>kernel-common-cache</artifactId>
 
 
 </project>

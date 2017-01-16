@@ -11,7 +11,7 @@ import java.util.List;
 /**
  * Created by js on 2016/12/21.
  */
-public interface BaseDao<T> {
+public interface BaseDAO<T> {
 
     void insert(T t);
 

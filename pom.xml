@@ -17,6 +17,7 @@
         <module>kernel-core-service</module>
         <module>kernel-common-cache</module>
         <module>kernel-common-util</module>
+        <module>api-model</module>
     </modules>
 
     <dependencies>

@@ -2,7 +2,7 @@ package com.zj.api.kernel.common.dao.impl;
 
 
 
-import com.zj.api.kernel.common.dao.BaseDao;
+import com.zj.api.kernel.common.dao.BaseDAO;
 import com.zj.api.kernel.common.dao.constant.SQLConstant;
 import com.zj.api.kernel.common.dao.query.BaseQuery;
 import com.zj.api.kernel.common.util.model.PageList;
@@ -20,7 +20,7 @@ import java.util.List;
 /**
  * Created by js on 2016/12/21.
  */
-public class BaseDaoImpl<T> extends SqlSessionDaoSupport implements BaseDao<T> {
+public class BaseDAOImpl<T> extends SqlSessionDaoSupport implements BaseDAO<T> {
 
     protected String nameSpace;
 

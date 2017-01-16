@@ -2,7 +2,7 @@ package com.zj.api.kernel.biz.service.impl;
 
 
 import com.zj.api.kernel.biz.service.BaseService;
-import com.zj.api.kernel.common.dao.BaseDao;
+import com.zj.api.kernel.common.dao.BaseDAO;
 import com.zj.api.kernel.common.dao.query.BaseQuery;
 import com.zj.api.kernel.common.util.model.PageList;
 import com.zj.api.kernel.common.util.model.Paginator;
@@ -16,7 +16,7 @@ import java.util.List;
  */
 public abstract class BaseServiceImpl<T> implements BaseService<T> {
 
-    protected abstract BaseDao<T> getDao();
+    protected abstract BaseDAO<T> getDao();
 
     @Transactional
     public T getByIdLock(Integer id) {

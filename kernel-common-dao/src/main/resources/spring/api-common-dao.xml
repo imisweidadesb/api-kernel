@@ -12,9 +12,10 @@
 
 
     <context:annotation-config/>
+
     <tx:annotation-driven transaction-manager="transactionManager"/>
 
-    <context:component-scan base-package="com.zj.api.kernel.common.dao.impl"/>
+    <context:component-scan base-package="com.zj.api.kernel.common.dao"/>
 
     <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource"
           init-method="init" destroy-method="close">
@@ -67,8 +68,8 @@
 
     <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
         <property name="dataSource" ref="dataSource"/>
-        <property name="configLocation" value="classpath:"/>
-        <property name="mapperLocations" value="classpath:/mybatis/tables"/>
+        <property name="configLocation" value="classpath:/mybatis/configuration.xml"/>
+        <property name="mapperLocations" value="classpath:/mybatis/tables/*-mapper.xml"/>
     </bean>
 
     <bean id="transactionManager"

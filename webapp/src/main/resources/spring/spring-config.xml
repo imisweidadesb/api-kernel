@@ -10,6 +10,6 @@
    	   http://www.springframework.org/schema/tx
        http://www.springframework.org/schema/tx/spring-tx-3.0.xsd">
 
-    <context:property-placeholder location="classpath:memcached.properties,classpath:jdbc.properties"/>
+    <context:property-placeholder location="classpath:/config/memcached.properties,classpath:config/jdbc.properties,classpath:/config/system_dev.properties"/>
 
 </beans>

@@ -40,6 +40,8 @@ public class QuoteUtilImpl implements QuoteUtil {
             String result = EntityUtils.toString(httpEntity, "UTF-8");
         } catch (IOException e) {
             logger.error("获取行情失败,e:{}", e);
+        } finally {
+            httpGet.releaseConnection();
         }
     }
 

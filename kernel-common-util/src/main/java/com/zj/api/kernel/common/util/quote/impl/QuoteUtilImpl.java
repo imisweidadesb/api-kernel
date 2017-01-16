@@ -14,7 +14,6 @@ import org.springframework.stereotype.Service;
 
 import java.io.IOException;
 
-import java.util.Date;
 
 /**
  * Created by js on 2017/1/16.
@@ -34,7 +33,7 @@ public class QuoteUtilImpl implements QuoteUtil {
     }
 
     public void getStockQuote(String stockCode) {
-        HttpGet httpGet = new HttpGet(sinaQuoteUrl.replace("curTime", new Date().getTime() + "").replace("stockCode", stockCode));
+        HttpGet httpGet = new HttpGet(sinaQuoteUrl.replace("stockCode", stockCode));
         try {
             HttpResponse httpResponse = httpClient.execute(httpGet);
             HttpEntity httpEntity = httpResponse.getEntity();

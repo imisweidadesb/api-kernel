@@ -1,6 +1,6 @@
 package com.zj.api.kernel.common.dao;
 
-import com.zj.api.model.Stock;
+import com.zj.api.model.stock.Stock;
 
 /**
  * Created by js on 2017/1/16.

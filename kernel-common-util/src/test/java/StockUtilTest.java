@@ -1,7 +1,9 @@
 import com.zj.api.kernel.common.util.quote.QuoteUtil;
-import com.zj.api.kernel.common.util.quote.impl.QuoteUtilImpl;
+import com.zj.api.kernel.common.util.quote.impl.SinaQuoteUtilImpl;
+import com.zj.api.model.stock.QuoteInfo;
 
 import java.util.Date;
+import java.util.Map;
 
 
 /**
@@ -10,9 +12,10 @@ import java.util.Date;
 public class StockUtilTest {
 
     public static void main(String agrs[]) {
-        QuoteUtil stockUtil = new QuoteUtilImpl();
+        QuoteUtil stockUtil = new SinaQuoteUtilImpl();
         Date date = new Date();
-        stockUtil.getStockQuote("sz002594,sh601006");
+        Map<String, QuoteInfo> quoteInfo = stockUtil.getStocksQuote("sh601006");
+        System.out.println(quoteInfo);
         System.out.println(System.currentTimeMillis() - date.getTime());
 
     }

@@ -17,7 +17,6 @@
         <module>kernel-core-service</module>
         <module>kernel-common-cache</module>
         <module>kernel-common-util</module>
-        <module>api-model</module>
     </modules>
 
     <dependencies>
@@ -218,6 +217,12 @@
             <groupId>org.json</groupId>
             <artifactId>json</artifactId>
             <version>${json.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.zj.api</groupId>
+            <artifactId>api-model</artifactId>
+            <version>1.0</version>
         </dependency>
 
 

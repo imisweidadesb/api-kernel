@@ -6,4 +6,5 @@ package com.zj.api.kernel.common.util.quote;
 public interface QuoteUtil {
 
     void getStockQuote(String stockCode);
+
 }

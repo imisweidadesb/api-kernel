@@ -276,7 +276,6 @@
 
 
     <build>
-        <finalName>api-kernel</finalName>
 
         <resources>
             <resource>

@@ -1,7 +1,7 @@
 package com.zj.api.kernel.common.dao.impl;
 
 import com.zj.api.kernel.common.dao.StockDAO;
-import com.zj.api.model.Stock;
+import com.zj.api.model.stock.Stock;
 import org.springframework.stereotype.Repository;
 
 /**

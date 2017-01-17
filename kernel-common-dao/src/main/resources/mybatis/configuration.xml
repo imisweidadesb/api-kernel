@@ -3,7 +3,7 @@
 <configuration>
 
     <typeAliases>
-        <typeAlias type="com.zj.api.model.Stock" alias="Stock"/>
+        <typeAlias type="com.zj.api.model.stock.Stock" alias="Stock"/>
     </typeAliases>
 
 </configuration>

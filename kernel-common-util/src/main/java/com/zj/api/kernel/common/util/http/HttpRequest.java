@@ -1,4 +1,4 @@
-package com.zj.api.kernel.common.util;
+package com.zj.api.kernel.common.util.http;
 
 import org.apache.commons.io.IOUtils;
 

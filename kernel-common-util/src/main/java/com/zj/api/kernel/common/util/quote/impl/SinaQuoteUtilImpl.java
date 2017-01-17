@@ -1,6 +1,6 @@
 package com.zj.api.kernel.common.util.quote.impl;
 
-import com.zj.api.kernel.common.util.HttpRequest;
+import com.zj.api.kernel.common.util.http.HttpRequest;
 import com.zj.api.kernel.common.util.quote.QuoteUtil;
 import com.zj.api.model.stock.QuoteInfo;
 import org.slf4j.Logger;
@@ -41,15 +41,24 @@ public class SinaQuoteUtilImpl implements QuoteUtil {
         Map<String, QuoteInfo> quoteInfoMap = new HashMap<String, QuoteInfo>();
         try {
             String result = HttpRequest.doGet(sinaQuoteUrl.replace("stockCodes", stockCodes));
-            String strs[] = result.split(";");
-            for (String str : strs) {
-                QuoteInfo quoteInfo = analysisResult(str);
-                quoteInfoMap.put(quoteInfo.getStockCode(), quoteInfo);
-            }
+            resolveStr(quoteInfoMap, result);
         } catch (IOException e) {
             logger.error("新浪行情批量获取失败,e:{}", e);
         }
         return quoteInfoMap;
+    }
+
+    /**
+     * 解析字符
+     *
+     * @param quoteInfoMap
+     * @param result
+     */
+    private void resolveStr(Map<String, QuoteInfo> quoteInfoMap, String result) {
+        for (String str : result.split(";")) {
+            QuoteInfo quoteInfo = analysisResult(str);
+            quoteInfoMap.put(quoteInfo.getStockCode(), quoteInfo);
+        }
     }
 
     private QuoteInfo analysisResult(String result) {

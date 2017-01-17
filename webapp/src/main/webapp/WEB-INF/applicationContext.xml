@@ -15,6 +15,7 @@
     <import resource="classpath*:spring/api-biz-service.xml"/>
     <import resource="classpath*:spring/api-common-util.xml"/>
     <import resource="classpath*:spring/api-common-cache.xml"/>
+    <import resource="classpath*:spring/api-core-service.xml"/>
     <import resource="classpath*:spring/api-core-integration.xml"/>
 
 </beans>

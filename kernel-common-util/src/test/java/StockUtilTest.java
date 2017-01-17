@@ -1,3 +1,4 @@
+import com.zj.api.kernel.common.util.pattern.PatternUtil;
 import com.zj.api.kernel.common.util.quote.QuoteUtil;
 import com.zj.api.kernel.common.util.quote.impl.SinaQuoteUtilImpl;
 import com.zj.api.model.stock.QuoteInfo;
@@ -12,11 +13,12 @@ import java.util.Map;
 public class StockUtilTest {
 
     public static void main(String agrs[]) {
-        QuoteUtil stockUtil = new SinaQuoteUtilImpl();
-        Date date = new Date();
-        Map<String, QuoteInfo> quoteInfo = stockUtil.getStocksQuote("sh601006");
-        System.out.println(quoteInfo);
-        System.out.println(System.currentTimeMillis() - date.getTime());
+//        QuoteUtil stockUtil = new SinaQuoteUtilImpl();
+//        Date date = new Date();
+//        QuoteInfo quoteInfo = stockUtil.getStockQuote("sh601006");
+//        System.out.println(quoteInfo);
+//        System.out.println(System.currentTimeMillis() - date.getTime());
+        System.out.println(PatternUtil.checkStr("sh601007,sh601007"));
 
     }
 }

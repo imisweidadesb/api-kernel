@@ -1,7 +1,5 @@
 package com.zj.api.kernel.common.dao.impl;
 
-
-
 import com.zj.api.kernel.common.dao.BaseDAO;
 import com.zj.api.kernel.common.dao.constant.SQLConstant;
 import com.zj.api.kernel.common.dao.query.BaseQuery;
@@ -18,7 +16,7 @@ import java.util.Collection;
 import java.util.List;
 
 /**
- * Created by js on 2016/12/21.
+ * Created by ZJ on 2017/1/17.
  */
 public class BaseDAOImpl<T> extends SqlSessionDaoSupport implements BaseDAO<T> {
 

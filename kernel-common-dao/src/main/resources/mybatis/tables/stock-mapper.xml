@@ -6,9 +6,72 @@
 
     <resultMap id="stockResultMap" type="Stock">
         <id column="__id" property="id"/>
-        <result column="__stockName" property="stockName"/>
-        <result column="__stockCode" property="stockCode"/>
+        <result column="__stock_name" property="stockName"/>
+        <result column="__stock_code" property="stockCode"/>
+        <result column="__simple_name" property="simpleName"/>
+        <result column="__create_time" property="createTime"/>
     </resultMap>
+
+    <insert id="INSERT" parameterType="Stock" useGeneratedKeys="true" keyColumn="__id" keyProperty="id">
+        INSERT INTO __stock (__stock_name,__stock_code,__simple_name,__create_time) VALUES (#{stockName},#{stockCode},#{simpleName},#{createTime})
+    </insert>
+
+
+    <delete id="DELETE" parameterType="Integer">
+        DELETE FROM __stock WHERE __id=#{id}
+    </delete>
+
+
+    <select id="SELECT_BY_ID" parameterType="Integer" resultMap="stockResultMap">
+        SELECT * FROM __stock WHERE __id = #{id}
+    </select>
+
+
+    <select id="SELECT_BY_ID_WITH_LOCK" parameterType="Integer" resultMap="stockResultMap">
+        SELECT * FROM __stock WHERE __id = #{id} FOR UPDATE
+    </select>
+
+    <select id="SELECT_COUNT_BY_PAGE" parameterType="com.zj.api.kernel.common.dao.query.StockQuery"
+            resultType="Integer">
+        SELECT COUNT(__id) FROM __stock
+        <include refid="WHERE_PAGE"/>
+    </select>
+
+
+    <select id="SELECT_BY_PAGE" parameterType="com.zj.api.kernel.common.dao.query.StockQuery"
+            resultMap="stockResultMap">
+        SELECT * FROM __stock
+        <include refid="WHERE_PAGE"/>
+        LIMIT #{startNum} ,#{pageSize}
+        <if test="order != null">
+            ORDER BY #{order}
+        </if>
+    </select>
+
+    <sql id="WHERE_PAGE">
+        <where>
+            <if test="id != null">
+                __id = #{id}
+            </if>
+            <if test="stockName != null">
+                AND __stock_name = #{stockName}
+            </if>
+            <if test="stockCode != null">
+                AND __stock_code = #{stockCode}
+            </if>
+            <if test="simpleName != null">
+                AND __simple_name = #{simpleName}
+            </if>
+            <if test="createTimeStart != null">
+                AND __create_time >= #{createTimeStart}
+            </if>
+            <if test="createTimeEnd != null">
+                <![CDATA[
+                AND __create_time <= #{createTimeEnd}
+                ]]>
+            </if>
+        </where>
+    </sql>
 
 
 </mapper>

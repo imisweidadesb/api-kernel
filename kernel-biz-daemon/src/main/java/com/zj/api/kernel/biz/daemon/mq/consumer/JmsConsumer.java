@@ -1,5 +1,6 @@
 package com.zj.api.kernel.biz.daemon.mq.consumer;
 
+import com.zj.api.kernel.biz.daemon.mq.listener.ConsumerListener;
 import org.apache.activemq.command.ActiveMQQueue;
 import org.apache.activemq.command.ActiveMQTopic;
 import org.springframework.beans.factory.InitializingBean;
@@ -21,7 +22,7 @@ public class JmsConsumer implements InitializingBean {
 
     private MessageConverter messageConverter;
 
-    private Object delegate;
+    private ConsumerListener<?> delegate;
 
     public String getQueueName() {
         return queueName;
@@ -47,11 +48,11 @@ public class JmsConsumer implements InitializingBean {
         this.messageConverter = messageConverter;
     }
 
-    public Object getDelegate() {
+    public ConsumerListener<?> getDelegate() {
         return delegate;
     }
 
-    public void setDelegate(Object delegate) {
+    public void setDelegate(ConsumerListener<?> delegate) {
         this.delegate = delegate;
     }
 

@@ -66,7 +66,7 @@ public class SinaQuoteUtilImpl implements QuoteUtil {
         String str = result.replace("var hq_str_", "");
         quoteInfo.setStockCode(str.split("=")[0]);
         String infos[] = str.split("=")[1].split(",");
-        quoteInfo.setStockName(infos[0]);
+        quoteInfo.setStockName(infos[0].substring(1));
         quoteInfo.setOpenPrice(Float.parseFloat(infos[1]));
         quoteInfo.setClosePrice(Float.parseFloat(infos[2]));
         quoteInfo.setCurrentPrice(Float.parseFloat(infos[3]));

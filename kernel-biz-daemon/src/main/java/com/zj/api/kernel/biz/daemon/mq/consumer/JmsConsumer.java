@@ -64,6 +64,7 @@ public class JmsConsumer implements InitializingBean {
         listenerAdapter.setDelegate(this.delegate);
         defaultContainer.setMessageConverter(this.messageConverter);
         listenerAdapter.setDefaultListenerMethod("receiveMessage");
+        defaultContainer.setMessageListener(listenerAdapter);
         if (queueName.contains("QUEUE")) {
             destination = new ActiveMQQueue(queueName);
         } else if (queueName.contains("TOPIC")) {

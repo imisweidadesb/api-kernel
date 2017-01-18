@@ -21,6 +21,18 @@
         DELETE FROM __stock WHERE __id=#{id}
     </delete>
 
+    <select id="SELECT_BY_STOCK_CODE" parameterType="String"
+            resultMap="stockResultMap">
+        SELECT * FROM __stock WHERE __stock_code = #{stockCode}
+        </select>
+
+
+    <select id="SELECT_BY_QUERY" parameterType="com.zj.api.kernel.common.dao.query.StockQuery"
+            resultMap="stockResultMap">
+        SELECT * FROM __stock
+        <include refid="WHERE_PAGE"/>
+    </select>
+
 
     <select id="SELECT_BY_ID" parameterType="Integer" resultMap="stockResultMap">
         SELECT * FROM __stock WHERE __id = #{id}

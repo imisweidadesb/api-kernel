@@ -15,7 +15,6 @@ import org.springframework.transaction.annotation.Transactional;
 import javax.annotation.Resource;
 import java.util.Date;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Set;
 
 /**
@@ -46,8 +45,8 @@ public class StockMsgServiceImpl implements StockMsgService {
                     cacheService.set(QUOTE_INFO_KEY + quoteInfo.getStockCode(), quoteInfo, 0);
                     stockQuery = new StockQuery();
                     stockQuery.setStockCode(quoteInfo.getStockCode());
-                    List<Stock> stocks = stockDAO.getByQuery(stockQuery);
-                    if (stocks == null && stocks.isEmpty()) {
+                    Stock stock = stockDAO.getByStockCode(quoteInfo.getStockCode());
+                    if (stock == null) {
                         addStock(quoteInfo);
                     }
                 }

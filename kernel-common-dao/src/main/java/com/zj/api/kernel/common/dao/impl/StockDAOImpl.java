@@ -5,7 +5,6 @@ import com.zj.api.model.stock.Stock;
 import org.springframework.stereotype.Repository;
 import org.springframework.util.Assert;
 
-import java.util.List;
 
 /**
  * Created by js on 2017/1/16.

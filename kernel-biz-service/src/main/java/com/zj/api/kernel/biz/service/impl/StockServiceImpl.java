@@ -40,7 +40,9 @@ public class StockServiceImpl extends BaseServiceImpl<Stock> implements StockSer
         Assert.isTrue(PatternUtil.checkStr(stockCodes), "股票代码不合法");
         Map<String, QuoteInfo> resultMap = quoteUtil.getStocksQuote(stockCodes);
         //发送消息
-        jmsProducer.sendMessage("QUEUE_QUERY_STOCK", (HashMap<String, QuoteInfo>) resultMap);
+        if (resultMap.size() > 0) {
+            jmsProducer.sendMessage("QUEUE_QUERY_STOCK", (HashMap<String, QuoteInfo>) resultMap);
+        }
         return resultMap;
     }
 

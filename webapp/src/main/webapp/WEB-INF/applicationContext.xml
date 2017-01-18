@@ -11,11 +11,12 @@
        http://www.springframework.org/schema/tx/spring-tx-3.0.xsd">
 
     <import resource="classpath*:spring/spring-config.xml"/>
-    <import resource="classpath*:spring/api-common-dao.xml"/>
-    <import resource="classpath*:spring/api-biz-service.xml"/>
-    <import resource="classpath*:spring/api-common-util.xml"/>
-    <import resource="classpath*:spring/api-common-cache.xml"/>
-    <import resource="classpath*:spring/api-core-service.xml"/>
-    <import resource="classpath*:spring/api-core-integration.xml"/>
+    <import resource="classpath*:spring/kernel-common-dao.xml"/>
+    <import resource="classpath*:spring/kernel-biz-service.xml"/>
+    <import resource="classpath*:spring/kernel-common-util.xml"/>
+    <import resource="classpath*:spring/kernel-common-cache.xml"/>
+    <import resource="classpath*:spring/kernel-core-service.xml"/>
+    <import resource="classpath*:spring/kernel-core-integration.xml"/>
+    <import resource="classpath*:spring/api-kernel-daemon.xml"/>
 
 </beans>

@@ -47,6 +47,11 @@
             <artifactId>kernel-core-service</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
+        <dependency>
+            <groupId>com.zj.api</groupId>
+            <artifactId>kernel-biz-daemon</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
     </dependencies>
     <build>
         <finalName>webapp</finalName>

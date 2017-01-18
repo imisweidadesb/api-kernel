@@ -4,6 +4,7 @@ import com.zj.api.kernel.biz.daemon.service.StockMsgService;
 import com.zj.api.kernel.common.cache.CacheService;
 import com.zj.api.kernel.common.dao.StockDAO;
 import com.zj.api.kernel.common.dao.query.StockQuery;
+import com.zj.api.kernel.common.util.pinyin.Pinyin4jUtil;
 import com.zj.api.model.stock.QuoteInfo;
 import com.zj.api.model.stock.Stock;
 import org.slf4j.Logger;
@@ -46,19 +47,20 @@ public class StockMsgServiceImpl implements StockMsgService {
                     stockQuery = new StockQuery();
                     stockQuery.setStockCode(quoteInfo.getStockCode());
                     List<Stock> stocks = stockDAO.getByQuery(stockQuery);
-                    addStock(quoteInfo, stocks);
+                    if (stocks == null && stocks.isEmpty()) {
+                        addStock(quoteInfo);
+                    }
                 }
             }
         }
     }
 
-    private void addStock(QuoteInfo quoteInfo, List<Stock> stocks) {
-        if (stocks == null && stocks.isEmpty()) {
-            Stock stock = new Stock();
-            stock.setStockCode(quoteInfo.getStockCode());
-            stock.setStockName(quoteInfo.getStockName());
-            stock.setCreateTime(new Date());
-            stockDAO.insert(stock);
-        }
+    private void addStock(QuoteInfo quoteInfo) {
+        Stock stock = new Stock();
+        stock.setStockCode(quoteInfo.getStockCode());
+        stock.setStockName(quoteInfo.getStockName());
+        stock.setSimpleName(Pinyin4jUtil.converterToFirstSpell(quoteInfo.getStockName()));
+        stock.setCreateTime(new Date());
+        stockDAO.insert(stock);
     }
 }

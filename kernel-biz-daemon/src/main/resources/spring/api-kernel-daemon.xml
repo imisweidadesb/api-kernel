@@ -9,28 +9,16 @@
    	   http://www.springframework.org/schema/jee/spring-jee-3.0.xsd
    	   http://www.springframework.org/schema/tx
        http://www.springframework.org/schema/tx/spring-tx-3.0.xsd">
+
+
     <context:annotation-config/>
-    <context:component-scan base-package="com.zj.api.kernel.common.util"/>
+    <context:component-scan base-package="com.zj.api.kernel.biz.daemon"/>
 
-
-    <!-- 配置JMS连接工厂 -->
-    <bean id="connectionFactory" class="org.apache.activemq.ActiveMQConnectionFactory">
-        <property name="brokerURL" value="${jms.server.address}"/>
-    </bean>
-
-    <!-- 连接池 -->
-    <bean id="pooledConnectionFactory" class="org.apache.activemq.pool.PooledConnectionFactory">
-        <property name="connectionFactory" ref="connectionFactory"/>
-        <property name="maxConnections" value="10"/>
-    </bean>
-
-    <!-- 消息转换器 -->
-    <bean id="apiMessageConverter" class="com.zj.api.kernel.common.util.mq.ApiMessageConverter"/>
-
-    <!-- 配置JMS模板，Spring提供的JMS工具类，它发送、接收消息。 -->
-    <bean id="jmsTemplate" class="org.springframework.jms.core.JmsTemplate">
+    <bean id="stockMsgConsumer" class="com.zj.api.kernel.biz.daemon.mq.consumer.JmsConsumer">
         <property name="connectionFactory" ref="pooledConnectionFactory"/>
+        <property name="delegate" ref="stockMsgReceiver"/>
+        <property name="queueName" value="QUEUE_QUERY_STOCK"/>
         <property name="messageConverter" ref="apiMessageConverter"/>
-        <property name="receiveTimeout" value="10000"/>
     </bean>
+
 </beans>

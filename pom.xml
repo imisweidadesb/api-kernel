@@ -7,7 +7,7 @@
     <groupId>com.zj.api</groupId>
     <artifactId>api-kernel</artifactId>
     <packaging>pom</packaging>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.0</version>
     <modules>
         <module>webapp</module>
         <module>kernel-common-dao</module>

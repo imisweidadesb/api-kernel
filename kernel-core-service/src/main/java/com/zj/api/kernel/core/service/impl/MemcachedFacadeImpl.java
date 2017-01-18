@@ -35,7 +35,7 @@ public class MemcachedFacadeImpl implements MemcachedFacade {
 
     public <V extends Serializable> Result<V> get(String key) {
         try {
-            boolean success = cacheService.get(key);
+            V success = cacheService.get(key);
             return ResultUtil.getSuccessResult(success);
         } catch (IllegalArgumentException e) {
             logger.error("api-kernel获取缓存内部错误,e:{}", e);

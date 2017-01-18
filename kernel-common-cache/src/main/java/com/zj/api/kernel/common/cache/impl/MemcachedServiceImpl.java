@@ -21,13 +21,15 @@ public class MemcachedServiceImpl implements CacheService {
     @Resource(name = "memcachedClient")
     private MemCachedClient memcachedClient;
 
-
     public <V extends Serializable> boolean set(String key, V value, Integer time) {
         if (null == key || null == value) {
             logger.error("key或者value为空");
             return false;
         }
         try {
+            if (time == 0) {
+                return memcachedClient.set(key, value, time);
+            }
             return memcachedClient.set(key, value, new Date(1000 * time));
         } catch (Exception e) {
             logger.error("添加memcached缓存失败,e:{}", e);

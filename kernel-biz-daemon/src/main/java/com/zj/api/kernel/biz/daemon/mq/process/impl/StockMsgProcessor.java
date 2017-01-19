@@ -31,7 +31,7 @@ public class StockMsgProcessor implements BaseMsgProcessor {
             threadPoolTaskExecutor.execute(new Runnable() {
                 public void run() {
                     try {
-                        logger.info("处理股票查询消息");
+                        logger.info("处理股票查询消息,stockCodes:{}", ((HashMap) serializable).keySet());
                         stockMsgService.saveStock((HashMap<String, QuoteInfo>) serializable);
                     } catch (Exception e) {
                         logger.error("处理股票查询消息失败,e:{}", e);

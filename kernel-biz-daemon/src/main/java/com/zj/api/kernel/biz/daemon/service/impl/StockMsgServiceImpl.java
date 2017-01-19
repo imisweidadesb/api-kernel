@@ -5,6 +5,7 @@ import com.zj.api.kernel.common.cache.CacheService;
 import com.zj.api.kernel.common.dao.StockDAO;
 import com.zj.api.kernel.common.dao.query.StockQuery;
 import com.zj.api.kernel.common.util.pinyin.Pinyin4jUtil;
+import com.zj.api.model.cache.constant.CacheKeyConstant;
 import com.zj.api.model.stock.QuoteInfo;
 import com.zj.api.model.stock.Stock;
 import org.slf4j.Logger;
@@ -31,8 +32,6 @@ public class StockMsgServiceImpl implements StockMsgService {
     @Resource(name = "memcachedService")
     private CacheService cacheService;
 
-    private final String QUOTE_INFO_KEY = "QUOTE_INFO_KEY_";
-
 
     @Transactional
     public void saveStock(HashMap<String, QuoteInfo> quoteInfoHashMap) {
@@ -42,7 +41,7 @@ public class StockMsgServiceImpl implements StockMsgService {
             for (String str : keys) {
                 QuoteInfo quoteInfo = quoteInfoHashMap.get(str);
                 if (quoteInfo != null) {
-                    cacheService.set(QUOTE_INFO_KEY + quoteInfo.getStockCode(), quoteInfo, 0);
+                    cacheService.set(CacheKeyConstant.QUOTE_INFO_KEY + quoteInfo.getStockCode(), quoteInfo, 0);
                     stockQuery = new StockQuery();
                     stockQuery.setStockCode(quoteInfo.getStockCode());
                     Stock stock = stockDAO.getByStockCode(quoteInfo.getStockCode());

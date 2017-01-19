@@ -1,11 +1,11 @@
 package com.zj.api.kernel.biz.service.impl;
 
 
+import com.zj.api.common.util.dao.page.PageList;
+import com.zj.api.common.util.dao.page.Paginator;
+import com.zj.api.common.util.dao.query.BaseQuery;
 import com.zj.api.kernel.biz.service.BaseService;
 import com.zj.api.kernel.common.dao.BaseDAO;
-import com.zj.api.kernel.common.dao.query.BaseQuery;
-import com.zj.api.kernel.common.util.model.PageList;
-import com.zj.api.kernel.common.util.model.Paginator;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.Assert;
 

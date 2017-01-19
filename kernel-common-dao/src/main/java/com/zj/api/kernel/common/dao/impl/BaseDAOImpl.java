@@ -1,10 +1,10 @@
 package com.zj.api.kernel.common.dao.impl;
 
+import com.zj.api.common.util.dao.page.PageList;
+import com.zj.api.common.util.dao.page.Paginator;
+import com.zj.api.common.util.dao.query.BaseQuery;
 import com.zj.api.kernel.common.dao.BaseDAO;
 import com.zj.api.kernel.common.dao.constant.SQLConstant;
-import com.zj.api.kernel.common.dao.query.BaseQuery;
-import com.zj.api.kernel.common.util.model.PageList;
-import com.zj.api.kernel.common.util.model.Paginator;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.mybatis.spring.support.SqlSessionDaoSupport;
 import org.springframework.util.Assert;

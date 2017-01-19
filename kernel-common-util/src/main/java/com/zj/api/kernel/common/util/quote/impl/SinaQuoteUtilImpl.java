@@ -1,6 +1,6 @@
 package com.zj.api.kernel.common.util.quote.impl;
 
-import com.zj.api.kernel.common.util.http.HttpRequest;
+import com.zj.api.common.util.http.HttpRequest;
 import com.zj.api.kernel.common.util.quote.QuoteUtil;
 import com.zj.api.model.stock.QuoteInfo;
 import org.slf4j.Logger;

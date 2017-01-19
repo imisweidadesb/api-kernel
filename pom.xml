@@ -276,6 +276,18 @@
             <version>1.0</version>
         </dependency>
 
+        <dependency>
+            <groupId>com.zj.api</groupId>
+            <artifactId>api-common-util</artifactId>
+            <version>1.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.zj.api</groupId>
+            <artifactId>api-common-message</artifactId>
+            <version>1.0</version>
+        </dependency>
+
 
     </dependencies>
 

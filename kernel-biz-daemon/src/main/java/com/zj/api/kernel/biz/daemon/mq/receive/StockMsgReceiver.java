@@ -1,6 +1,6 @@
 package com.zj.api.kernel.biz.daemon.mq.receive;
 
-import com.zj.api.kernel.biz.daemon.mq.listener.ConsumerListener;
+import com.zj.api.common.message.listener.ConsumerListener;
 import com.zj.api.kernel.biz.daemon.mq.process.impl.StockMsgProcessor;
 import org.springframework.stereotype.Component;
 

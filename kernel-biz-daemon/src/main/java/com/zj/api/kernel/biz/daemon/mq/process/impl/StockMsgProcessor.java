@@ -1,6 +1,6 @@
 package com.zj.api.kernel.biz.daemon.mq.process.impl;
 
-import com.zj.api.kernel.biz.daemon.mq.process.BaseMsgProcessor;
+import com.zj.api.common.message.process.BaseMsgProcessor;
 import com.zj.api.kernel.biz.daemon.service.StockMsgService;
 import com.zj.api.model.stock.QuoteInfo;
 import org.slf4j.Logger;

@@ -14,11 +14,16 @@
     <context:annotation-config/>
     <context:component-scan base-package="com.zj.api.kernel.biz.daemon"/>
 
-    <bean id="stockMsgConsumer" class="com.zj.api.kernel.biz.daemon.mq.consumer.JmsConsumer">
+    <bean id="stockMsgConsumer" class="com.zj.api.common.message.consumer.JmsConsumer">
         <property name="connectionFactory" ref="pooledConnectionFactory"/>
         <property name="delegate" ref="stockMsgReceiver"/>
         <property name="queueName" value="QUEUE_QUERY_STOCK"/>
         <property name="messageConverter" ref="apiMessageConverter"/>
+    </bean>
+
+
+    <bean id="jmsProducer" class="com.zj.api.common.message.producer.JmsProducer">
+        <property name="jmsTemplate" ref="jmsTemplate"/>
     </bean>
 
 </beans>

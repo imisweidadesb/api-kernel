@@ -1,5 +1,7 @@
 package com.zj.api.kernel.common.dao.query;
 
+import com.zj.api.common.util.dao.query.BaseQuery;
+
 import java.util.Date;
 
 /**

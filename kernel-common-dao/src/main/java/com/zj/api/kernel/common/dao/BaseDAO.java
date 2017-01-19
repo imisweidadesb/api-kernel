@@ -1,7 +1,7 @@
 package com.zj.api.kernel.common.dao;
 
-import com.zj.api.kernel.common.dao.query.BaseQuery;
-import com.zj.api.kernel.common.util.model.PageList;
+import com.zj.api.common.util.dao.page.PageList;
+import com.zj.api.common.util.dao.query.BaseQuery;
 
 import java.util.List;
 

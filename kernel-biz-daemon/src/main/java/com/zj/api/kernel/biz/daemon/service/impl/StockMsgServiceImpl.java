@@ -1,11 +1,11 @@
 package com.zj.api.kernel.biz.daemon.service.impl;
 
+import com.zj.api.common.util.pinyin.Pinyin4jUtil;
 import com.zj.api.kernel.biz.daemon.service.StockMsgService;
 import com.zj.api.kernel.common.cache.CacheService;
 import com.zj.api.kernel.common.dao.StockDAO;
 import com.zj.api.kernel.common.dao.query.StockQuery;
-import com.zj.api.kernel.common.util.pinyin.Pinyin4jUtil;
-import com.zj.api.model.cache.constant.CacheKeyConstant;
+import com.zj.api.model.constant.CacheKeyConstant;
 import com.zj.api.model.stock.QuoteInfo;
 import com.zj.api.model.stock.Stock;
 import org.slf4j.Logger;

@@ -11,13 +11,6 @@
 
     <artifactId>kernel-common-dao</artifactId>
     <version>1.0</version>
-    <dependencies>
-        <dependency>
-            <groupId>com.zj.api</groupId>
-            <artifactId>kernel-common-util</artifactId>
-            <version>1.0</version>
-        </dependency>
-    </dependencies>
 
 
 </project>

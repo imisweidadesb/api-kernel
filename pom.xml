@@ -16,7 +16,6 @@
         <module>kernel-core-facade</module>
         <module>kernel-core-service</module>
         <module>kernel-common-cache</module>
-        <module>kernel-common-util</module>
         <module>kernel-core-integration</module>
     </modules>
 

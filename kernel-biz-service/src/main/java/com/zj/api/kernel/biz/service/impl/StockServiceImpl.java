@@ -3,10 +3,10 @@ package com.zj.api.kernel.biz.service.impl;
 
 import com.zj.api.common.message.producer.JmsProducer;
 import com.zj.api.common.util.pattern.PatternUtil;
+import com.zj.api.common.util.quote.QuoteUtil;
 import com.zj.api.kernel.biz.service.StockService;
 import com.zj.api.kernel.common.dao.BaseDAO;
 import com.zj.api.kernel.common.dao.StockDAO;
-import com.zj.api.kernel.common.util.quote.QuoteUtil;
 import com.zj.api.model.stock.QuoteInfo;
 import com.zj.api.model.stock.Stock;
 import org.springframework.stereotype.Service;

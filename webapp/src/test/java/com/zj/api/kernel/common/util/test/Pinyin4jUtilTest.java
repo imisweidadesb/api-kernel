@@ -1,6 +1,6 @@
 package com.zj.api.kernel.common.util.test;
 
-import com.zj.api.kernel.common.util.pinyin.Pinyin4jUtil;
+import com.zj.api.common.util.pinyin.Pinyin4jUtil;
 import org.junit.Test;
 
 /**

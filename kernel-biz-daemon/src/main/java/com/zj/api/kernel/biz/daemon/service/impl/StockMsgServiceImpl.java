@@ -12,6 +12,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.util.StringUtils;
 
 import javax.annotation.Resource;
 import java.util.Date;
@@ -40,7 +41,7 @@ public class StockMsgServiceImpl implements StockMsgService {
             Set<String> keys = quoteInfoHashMap.keySet();
             for (String str : keys) {
                 QuoteInfo quoteInfo = quoteInfoHashMap.get(str);
-                if (quoteInfo != null && quoteInfo.getStockName() != null) {
+                if (quoteInfo != null && StringUtils.hasText(quoteInfo.getStockName())) {
                     cacheService.set(CacheKeyConstant.QUOTE_INFO_KEY + quoteInfo.getStockCode(), quoteInfo, 0);
                     stockQuery = new StockQuery();
                     stockQuery.setStockCode(quoteInfo.getStockCode());

@@ -40,12 +40,11 @@ public class StockMsgServiceImpl implements StockMsgService {
             Set<String> keys = quoteInfoHashMap.keySet();
             for (String str : keys) {
                 QuoteInfo quoteInfo = quoteInfoHashMap.get(str);
-                if (quoteInfo != null) {
+                if (quoteInfo != null && quoteInfo.getStockName() != null) {
                     cacheService.set(CacheKeyConstant.QUOTE_INFO_KEY + quoteInfo.getStockCode(), quoteInfo, 0);
                     stockQuery = new StockQuery();
                     stockQuery.setStockCode(quoteInfo.getStockCode());
-                    Stock stock = stockDAO.getByStockCode(quoteInfo.getStockCode());
-                    if (stock == null) {
+                    if (stockDAO.getByStockCode(quoteInfo.getStockCode()) == null) {
                         addStock(quoteInfo);
                     }
                 }

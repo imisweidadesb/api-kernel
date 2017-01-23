@@ -33,6 +33,10 @@
         <property name="receiveTimeout" value="10000"/>
     </bean>
 
+    <bean id="jmsProducer" class="com.zj.api.common.message.producer.JmsProducer">
+        <property name="jmsTemplate" ref="jmsTemplate"/>
+    </bean>
+
     <!-- spring 线程池-->
     <bean id="taskExecutor" class="org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor">
         <property name="corePoolSize" value="5"/>

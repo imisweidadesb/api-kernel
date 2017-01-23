@@ -12,7 +12,6 @@
         <module>webapp</module>
         <module>kernel-common-dao</module>
         <module>kernel-biz-service</module>
-        <module>kernel-biz-daemon</module>
         <module>kernel-core-facade</module>
         <module>kernel-core-service</module>
         <module>kernel-common-cache</module>

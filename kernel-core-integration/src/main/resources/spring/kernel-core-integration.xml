@@ -45,6 +45,8 @@
         <property name="queueCapacity" value="25"/>
     </bean>
 
-    <bean id="sinaQuotekUtil" class="com.zj.api.common.util.quote.impl.SinaQuoteUtilImpl"/>
+    <bean id="sinaQuotekUtil" class="com.zj.api.common.util.quote.impl.SinaQuoteUtilImpl">
+        <property name="sinaQuoteUrl" value="${sinaQuoteUrl}"/>
+    </bean>
 
 </beans>

@@ -13,10 +13,8 @@
     <import resource="classpath*:spring/spring-config.xml"/>
     <import resource="classpath*:spring/kernel-common-dao.xml"/>
     <import resource="classpath*:spring/kernel-biz-service.xml"/>
-    <import resource="classpath*:spring/kernel-common-util.xml"/>
     <import resource="classpath*:spring/kernel-common-cache.xml"/>
     <import resource="classpath*:spring/kernel-core-service.xml"/>
     <import resource="classpath*:spring/kernel-core-integration.xml"/>
-    <import resource="classpath*:spring/api-kernel-daemon.xml"/>
 
 </beans>
